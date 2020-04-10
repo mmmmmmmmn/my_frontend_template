@@ -1,13 +1,14 @@
 import React from 'react'
 import { NextComponentType } from 'next'
 import 'intersection-observer'
+import ResizeObserver from 'resize-observer-polyfill'
 import styled, { keyframes } from 'styled-components'
 
 const IeTest: NextComponentType = () => (
     <>
         <TransitionEndTest />
         <AnimationEndTest />
-        <NativeResizeObserverTest />
+        <ResizeObserverPolyfillTest />
         <IntersectionObserverPolyfillTest />
     </>
 )
@@ -63,14 +64,14 @@ const AnimationEndTest: React.FunctionComponent = () => {
     )
 }
 
-const NativeResizeObserverTest: React.FunctionComponent = () => {
+const ResizeObserverPolyfillTest: React.FunctionComponent = () => {
     const targetRef = React.useRef<HTMLDivElement>(null)
 
     React.useEffect(() => {
         if (targetRef.current === null) return
 
         const observer = new ResizeObserver(entries =>
-            entries.forEach(entry => console.log('resize native', entry.target.getBoundingClientRect().width)),
+            entries.forEach(entry => console.log('resize polyfill', entry.target.getBoundingClientRect().width)),
         )
 
         observer.observe(targetRef.current)
@@ -80,8 +81,8 @@ const NativeResizeObserverTest: React.FunctionComponent = () => {
 
     return (
         <>
-            NativeResizeObserverTestTarget
-            <NativeResizeObserverTestTarget ref={targetRef} />
+            ResizeObserverPolyfillTestTarget
+            <ResizeObserverPolyfillTestTarget ref={targetRef} />
         </>
     )
 }
@@ -142,7 +143,7 @@ const AnimationTarget = styled.div`
     }
 `
 
-const NativeResizeObserverTestTarget = styled.div`
+const ResizeObserverPolyfillTestTarget = styled.div`
     height: 100px;
     background: red;
 `
