@@ -10,7 +10,7 @@ const UseLayoutEffectTest: NextComponentType = () => {
 }
 
 const Child: React.FunctionComponent = () => {
-    const [count, setCount] = React.useState(0)
+    const [count, increment] = useIncrement()
 
     console.log('render', count)
 
@@ -19,10 +19,17 @@ const Child: React.FunctionComponent = () => {
 
     return (
         <>
-            <button onClick={() => setCount(count => count + 1)}>increment</button>
+            <button onClick={increment}>increment</button>
             count: {count}
         </>
     )
+}
+
+const useIncrement = (): [number, VoidFunction] => {
+    const [count, setCount] = React.useState(0)
+    const increment = () => setCount(count => count + 1)
+
+    return [count, increment]
 }
 
 export default UseLayoutEffectTest
