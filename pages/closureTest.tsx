@@ -1,21 +1,34 @@
 import React from 'react'
 import { NextComponentType } from 'next'
 
-const ClosureTest: NextComponentType = () => {
-    const closure = () => {
-        let count = 0
+const useTimer = () => {
+    let timerId: number | undefined
 
-        const increment = () => {
-            count = count + 1
-            console.log(count)
-        }
+    const set = (callBack: VoidFunction) => {
+        clear()
 
-        return increment
+        timerId = setTimeout(callBack, 3000)
+
+        console.log('set', timerId)
     }
 
-    const increment = closure()
+    const clear = () => {
+        if (timerId === undefined) return
 
-    return <button onClick={increment}>increment</button>
+        console.log('clear', timerId)
+
+        clearTimeout(timerId)
+    }
+
+    React.useEffect(() => clear, [])
+
+    return set
+}
+
+const ClosureTest: NextComponentType = () => {
+    const set = useTimer()
+
+    return <button onClick={() => set(() => console.log('fire'))}>set</button>
 }
 
 export default ClosureTest
