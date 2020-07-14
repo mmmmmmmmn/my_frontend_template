@@ -2,22 +2,22 @@ import React from 'react'
 import { NextComponentType } from 'next'
 
 const useTimer = () => {
-    let timerId: number | undefined
+    const timerId = React.useRef<number>()
 
     const set = (callBack: VoidFunction) => {
         clear()
 
-        timerId = setTimeout(callBack, 3000)
+        timerId.current = setTimeout(callBack, 3000)
 
-        console.log('set', timerId)
+        console.log('set', timerId.current)
     }
 
     const clear = () => {
-        if (timerId === undefined) return
+        if (timerId.current === undefined) return
 
-        console.log('clear', timerId)
+        console.log('clear', timerId.current)
 
-        clearTimeout(timerId)
+        clearTimeout(timerId.current)
     }
 
     React.useEffect(() => clear, [])
