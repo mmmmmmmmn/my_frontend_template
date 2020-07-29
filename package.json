@@ -18,6 +18,7 @@
         "@babel/node": "7.7.7",
         "@babel/preset-react": "7.7.4",
         "@babel/preset-typescript": "7.7.7",
+        "@testing-library/react-hooks": "^3.4.1",
         "@types/jest": "^25.1.4",
         "@types/material-ui": "^0.21.7",
         "@types/node": "12.12.22",
@@ -39,6 +40,7 @@
         "husky": "3.1.0",
         "lint-staged": "9.5.0",
         "prettier": "1.19.1",
+        "react-test-renderer": "^16.13.1",
         "typescript": "3.7.4"
     },
     "dependencies": {
