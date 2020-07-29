@@ -15,16 +15,16 @@ const useIsMount = () => {
     return isMount
 }
 
+const mount = () => {
+    const {
+        result: { current: isMountRef },
+        unmount,
+    } = renderHook(useIsMount)
+
+    return { isMountRef, unmount }
+}
+
 describe('useIsMount', () => {
-    const mount = () => {
-        const {
-            result: { current: isMountRef },
-            unmount,
-        } = renderHook(useIsMount)
-
-        return { isMountRef, unmount }
-    }
-
     it('should be true while mounting', () => {
         const { isMountRef } = mount()
 

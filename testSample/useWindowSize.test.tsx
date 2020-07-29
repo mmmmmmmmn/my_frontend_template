@@ -17,19 +17,19 @@ const useWindowSize = () => {
     return size
 }
 
+const mount = () => {
+    const { result: size, unmount } = renderHook(useWindowSize)
+
+    return { size, unmount }
+}
+
+const resize = () =>
+    act(() => {
+        Object.defineProperty(window, 'innerWidth', { value: 500 })
+        window.dispatchEvent(new Event('resize'))
+    })
+
 describe('useWindowSize', () => {
-    const mount = () => {
-        const { result: size, unmount } = renderHook(useWindowSize)
-
-        return { size, unmount }
-    }
-
-    const resize = () =>
-        act(() => {
-            Object.defineProperty(window, 'innerWidth', { value: 500 })
-            window.dispatchEvent(new Event('resize'))
-        })
-
     it('should return new size of window', () => {
         const { size } = mount()
 
