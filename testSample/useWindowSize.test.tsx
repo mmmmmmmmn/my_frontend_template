@@ -18,17 +18,31 @@ const useWindowSize = () => {
 }
 
 describe('useWindowSize', () => {
-    const { result, unmount } = renderHook(useWindowSize)
+    const mount = () => {
+        const { result: size, unmount } = renderHook(useWindowSize)
+
+        return { size, unmount }
+    }
+
+    const resize = () =>
+        act(() => {
+            Object.defineProperty(window, 'innerWidth', { value: 500 })
+            window.dispatchEvent(new Event('resize'))
+        })
 
     it('should return new size of window', () => {
-        expect(result.current).toEqual(expect.any(Number))
-        expect(result.current).not.toBe(500)
+        const { size } = mount()
+
+        expect(size.current).toEqual(expect.any(Number))
+        expect(size.current).not.toBe(500)
 
         resize()
 
-        expect(result.current).toBe(500)
+        expect(size.current).toBe(500)
     })
     it('should not cause error when fire resize event after unmount', () => {
+        const { unmount } = mount()
+
         unmount()
 
         jest.spyOn(console, 'error')
@@ -38,9 +52,3 @@ describe('useWindowSize', () => {
         expect(console.error).not.toBeCalled()
     })
 })
-
-const resize = () =>
-    act(() => {
-        Object.defineProperty(window, 'innerWidth', { value: 500 })
-        window.dispatchEvent(new Event('resize'))
-    })
