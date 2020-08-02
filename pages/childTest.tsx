@@ -1,10 +1,10 @@
-import React from 'react'
-import { NextComponentType } from 'next'
+import React from 'react';
+import { NextComponentType } from 'next';
 
 const ChildTest: NextComponentType = () => {
-    console.log('render parent')
+    console.log('render parent');
 
-    const [count, set] = React.useState(0)
+    const [count, set] = React.useState(0);
 
     return (
         <>
@@ -13,18 +13,18 @@ const ChildTest: NextComponentType = () => {
             <Child1 count={count} />
             <Child2 />
         </>
-    )
-}
+    );
+};
 
 const Child1: React.FunctionComponent<{ count: number }> = ({ count }) => {
-    console.log('render child1')
+    console.log('render child1');
 
-    return <>{count}</>
-}
+    return <>{count}</>;
+};
 const Child2: React.FunctionComponent = React.memo(() => {
-    console.log('render child2')
+    console.log('render child2');
 
-    return <>child 2</>
-})
+    return <>child 2</>;
+});
 
-export default ChildTest
+export default ChildTest;

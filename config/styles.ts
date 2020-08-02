@@ -1,1 +1,1 @@
-export const transition = 0.25
+export const transition = 0.25;

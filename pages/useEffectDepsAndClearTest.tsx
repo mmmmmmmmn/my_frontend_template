@@ -1,17 +1,17 @@
-import React from 'react'
-import { NextComponentType } from 'next'
+import React from 'react';
+import { NextComponentType } from 'next';
 
 const UseEffectDepsAndClearTest: NextComponentType = () => {
-    const [state1, setState1] = React.useState(0)
-    const [state2, setState2] = React.useState(0)
+    const [state1, setState1] = React.useState(0);
+    const [state2, setState2] = React.useState(0);
 
-    console.log(state1, 'render')
+    console.log(state1, 'render');
 
     React.useEffect(() => {
-        console.log(state1, 'after render, after state1 updated')
+        console.log(state1, 'after render, after state1 updated');
 
-        return () => console.log(state1, 'after render, before state1 updated')
-    }, [state1])
+        return () => console.log(state1, 'after render, before state1 updated');
+    }, [state1]);
 
     return (
         <>
@@ -20,7 +20,7 @@ const UseEffectDepsAndClearTest: NextComponentType = () => {
             <button onClick={() => setState2(state2 => state2 + 1)}>toggle2</button>
             {state2}
         </>
-    )
-}
+    );
+};
 
-export default UseEffectDepsAndClearTest
+export default UseEffectDepsAndClearTest;

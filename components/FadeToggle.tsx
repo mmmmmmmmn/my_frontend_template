@@ -1,7 +1,7 @@
-import React from 'react'
-import { useTransition, animated } from 'react-spring'
+import React from 'react';
+import { useTransition, animated } from 'react-spring';
 
-import { transition } from '../config/styles'
+import { transition } from '../config/styles';
 
 const FadeToggle: React.FunctionComponent<{ isShow: boolean }> = p => {
     const transitions = useTransition(p.isShow, null, {
@@ -10,7 +10,7 @@ const FadeToggle: React.FunctionComponent<{ isShow: boolean }> = p => {
         enter: { opacity: 1 },
         leave: { opacity: 0 },
         unique: true,
-    })
+    });
 
     return (
         <>
@@ -23,7 +23,7 @@ const FadeToggle: React.FunctionComponent<{ isShow: boolean }> = p => {
                     ),
             )}
         </>
-    )
-}
+    );
+};
 
-export default FadeToggle
+export default FadeToggle;

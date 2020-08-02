@@ -1,18 +1,18 @@
-import React from 'react'
-import { NextComponentType } from 'next'
+import React from 'react';
+import { NextComponentType } from 'next';
 
 const PromiseTest: NextComponentType = () => {
-    const [count, setCount] = React.useState(0)
+    const [count, setCount] = React.useState(0);
 
-    console.log(count)
+    console.log(count);
 
-    const countRef = React.useRef(count)
+    const countRef = React.useRef(count);
     React.useEffect(() => {
-        countRef.current = count
-    }, [count])
+        countRef.current = count;
+    }, [count]);
 
     const log = () =>
-        console.log(countRef.current /* 最新のcountRef */, count /* setTimeoutボタンがクリックされたときのcount */)
+        console.log(countRef.current /* 最新のcountRef */, count /* setTimeoutボタンがクリックされたときのcount */);
 
     return (
         <>
@@ -24,8 +24,8 @@ const PromiseTest: NextComponentType = () => {
                 prev: {countRef.current}
             </div>
         </>
-    )
-}
+    );
+};
 
 // const Parent: NextComponentType = () => {
 //     const [count, setCount] = React.useState(0)
@@ -63,4 +63,4 @@ const PromiseTest: NextComponentType = () => {
 
 // const Child: React.FunctionComponent<{ count: number }> = ({ count }) => <>{count}</>
 
-export default PromiseTest
+export default PromiseTest;

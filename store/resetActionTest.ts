@@ -4,16 +4,16 @@ enum ResetActionType {
 }
 
 type NestedPureObject = {
-    [key: string]: string | NestedPureObject
-}
+    [key: string]: string | NestedPureObject;
+};
 
 type GetResetActionTypeDeeply<T> = {
     [K in keyof T]: K extends ResetActionType
         ? T[K]
         : T[K] extends NestedPureObject
         ? GetResetActionTypeDeeply<T[K]>
-        : never
-}[keyof T]
+        : never;
+}[keyof T];
 
 const actionTypes = {
     update: 'update parent',
@@ -47,18 +47,18 @@ const actionTypes = {
         },
     },
     [ResetActionType.ResetAll]: 'reset all',
-} as const
+} as const;
 
 type ResetAction = {
-    type: GetResetActionTypeDeeply<typeof actionTypes>
-    payload?: any
-}
+    type: GetResetActionTypeDeeply<typeof actionTypes>;
+    payload?: any;
+};
 
 const resetAction: ResetAction = {
     type: 'reset grandChild3',
     payload: {
         i: 1234,
     },
-}
+};
 
-export default resetAction
+export default resetAction;
