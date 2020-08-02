@@ -8,8 +8,8 @@
         "start": "next start",
         "export": "next export",
         "lint": "eslint . --fix --ext .js,.ts,.tsx",
-        "fmt": "prettier --loglevel warn --write \"**/*.{js,ts,tsx,md,json,css}\"",
-        "watch:type": "tsc -w -noEmit",
+        "format": "prettier --loglevel warn --write \"**/*.{js,ts,tsx,md,json,css}\"",
+        "typeCheck": "tsc -w",
         "test": "jest"
     },
     "devDependencies": {
