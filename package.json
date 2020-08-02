@@ -7,7 +7,7 @@
         "build": "next build",
         "start": "next start",
         "export": "next export",
-        "lintAll": "eslint . --fix --ext .js,.ts,.tsx",
+        "lint": "eslint . --fix --ext .js,.ts,.tsx",
         "fmt": "prettier --loglevel warn --write \"**/*.{js,ts,tsx,md,json,css}\"",
         "watch:type": "tsc -w -noEmit",
         "test": "jest"

@@ -19,10 +19,6 @@ module.exports = {
         {
             files: ['*.js'],
             extends: ['eslint:recommended', 'plugin:prettier/recommended'],
-            rules: {
-                // for samples
-                'no-unused-vars': 2,
-            },
         },
         {
             files: ['*.ts', '*.tsx'],
@@ -42,6 +38,7 @@ module.exports = {
                 '@typescript-eslint/explicit-function-return-type': 0,
                 'react/prop-types': 0,
                 'react/react-in-jsx-scope': 0,
+                '@typescript-eslint/no-explicit-any': 0,
             },
         },
     ],

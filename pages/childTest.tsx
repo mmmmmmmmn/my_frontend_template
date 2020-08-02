@@ -21,10 +21,11 @@ const Child1: React.FunctionComponent<{ count: number }> = ({ count }) => {
 
     return <>{count}</>;
 };
-const Child2: React.FunctionComponent = React.memo(() => {
+const RawChild2: React.FunctionComponent = () => {
     console.log('render child2');
 
     return <>child 2</>;
-});
+};
+const Child2: React.FunctionComponent = React.memo(RawChild2);
 
 export default ChildTest;
