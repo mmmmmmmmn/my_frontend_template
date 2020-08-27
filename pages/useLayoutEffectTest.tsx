@@ -1,7 +1,7 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
-const UseLayoutEffectTest: NextComponentType = () => {
+const UseLayoutEffectTest: NextPage = () => {
     const [isShowChild, setIsShowChild] = React.useState(false);
 
     React.useEffect(() => setIsShowChild(true), []);

@@ -1,7 +1,7 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
-const UseEffectDepsAndClearTest: NextComponentType = () => {
+const UseEffectDepsAndClearTest: NextPage = () => {
     const [state1, setState1] = React.useState(0);
     const [state2, setState2] = React.useState(0);
 

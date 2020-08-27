@@ -1,9 +1,9 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
 import styled from 'styled-components';
 
-const SwitchRefTest: NextComponentType = () => {
+const SwitchRefTest: NextPage = () => {
     const targetRef = React.useRef<HTMLDivElement>(null);
     const [state, setState] = React.useState(false);
 

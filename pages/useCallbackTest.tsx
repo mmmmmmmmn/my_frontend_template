@@ -1,7 +1,7 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
-const UseCallbackTest: NextComponentType = () => {
+const UseCallbackTest: NextPage = () => {
     const [count, setCount] = React.useState(0);
 
     const rawCallback = () => console.log('raw callback');

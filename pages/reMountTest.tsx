@@ -1,7 +1,7 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
-const ReMountTest: NextComponentType = () => {
+const ReMountTest: NextPage = () => {
     const [count, setCount] = React.useState(0);
 
     return (

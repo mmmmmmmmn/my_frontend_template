@@ -1,9 +1,9 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
 import styled from 'styled-components';
 
-const ChildrenPropsTest: NextComponentType = () => (
+const ChildrenPropsTest: NextPage = () => (
     <ChildrenPropsChild>
         <>top</>
         <>bottom</>

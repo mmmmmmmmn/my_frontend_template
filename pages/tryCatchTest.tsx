@@ -1,4 +1,4 @@
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
 // const wait = (i: number) =>
 //     new Promise((resolve, reject) =>
@@ -37,6 +37,6 @@ const increment = (i: number) => {
 
 increment(0);
 
-const TryCatchTest: NextComponentType = () => <></>;
+const TryCatchTest: NextPage = () => <></>;
 
 export default TryCatchTest;

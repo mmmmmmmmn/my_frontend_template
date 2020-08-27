@@ -1,5 +1,5 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
 const useTimer = () => {
     const timerId = React.useRef<number>();
@@ -25,7 +25,7 @@ const useTimer = () => {
     return set;
 };
 
-const ClosureTest: NextComponentType = () => {
+const ClosureTest: NextPage = () => {
     const set = useTimer();
 
     return <button onClick={() => set(() => console.log('fire'))}>set</button>;

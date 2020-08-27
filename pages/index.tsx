@@ -1,7 +1,7 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
-const UseOnCommitTest: NextComponentType = () => {
+const UseOnCommitTest: NextPage = () => {
     console.log('mounted / updated');
 
     const [someState, setSomeState] = React.useState(false);

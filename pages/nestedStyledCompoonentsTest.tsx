@@ -1,9 +1,9 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
 import styled from 'styled-components';
 
-const NestedStyledCompoonentsTest: NextComponentType = () => (
+const NestedStyledCompoonentsTest: NextPage = () => (
     <Parent>
         <Child>child</Child>
     </Parent>

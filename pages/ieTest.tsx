@@ -1,10 +1,10 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 import 'intersection-observer';
 import ResizeObserver from 'resize-observer-polyfill';
 import styled, { keyframes } from 'styled-components';
 
-const IeTest: NextComponentType = () => (
+const IeTest: NextPage = () => (
     <>
         <TransitionEndTest />
         <AnimationEndTest />

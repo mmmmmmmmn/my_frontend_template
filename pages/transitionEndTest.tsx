@@ -1,8 +1,8 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 import styled from 'styled-components';
 
-const TransitionEndTest: NextComponentType = () => {
+const TransitionEndTest: NextPage = () => {
     const [isTop, setIsTop] = React.useState(false);
     const targetRef = React.useRef<HTMLDivElement | null>(null);
     const isBetween = useIsBetween(isTop, targetRef.current);

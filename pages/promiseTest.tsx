@@ -1,7 +1,7 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
-const PromiseTest: NextComponentType = () => {
+const PromiseTest: NextPage = () => {
     const [count, setCount] = React.useState(0);
 
     console.log(count);
@@ -27,7 +27,7 @@ const PromiseTest: NextComponentType = () => {
     );
 };
 
-// const Parent: NextComponentType = () => {
+// const Parent: NextPage = () => {
 //     const [count, setCount] = React.useState(0)
 
 //     React.useEffect(() => {

@@ -1,9 +1,9 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 import ResizeObserver from 'resize-observer-polyfill';
 import styled from 'styled-components';
 
-const ResizeObserverTest: NextComponentType = () => {
+const ResizeObserverTest: NextPage = () => {
     React.useEffect(() => {
         const target = document.getElementById('target1');
         const target2 = document.getElementById('target2');
@@ -50,7 +50,7 @@ const Target = styled.div`
     }
 `;
 
-// const App: NextComponentType = () => {
+// const App: NextPage = () => {
 //     const [count, setCount] = React.useState(0)
 
 //     const requestRef = React.useRef(count)

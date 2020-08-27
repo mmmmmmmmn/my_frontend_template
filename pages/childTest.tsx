@@ -1,7 +1,7 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
-const ChildTest: NextComponentType = () => {
+const ChildTest: NextPage = () => {
     console.log('render parent');
 
     const [count, set] = React.useState(0);

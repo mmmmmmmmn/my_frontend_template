@@ -1,7 +1,7 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
-const UseRefTest: NextComponentType = () => {
+const UseRefTest: NextPage = () => {
     const countRef = React.useRef(0);
     const [count, setCount] = React.useState(0);
 

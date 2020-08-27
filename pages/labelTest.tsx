@@ -1,9 +1,9 @@
 import React from 'react';
-import { NextComponentType } from 'next';
+import { NextPage } from 'next';
 
 import { FormControlLabel, Checkbox } from '@material-ui/core';
 
-const LabelTest: NextComponentType = () => {
+const LabelTest: NextPage = () => {
     const [isChecked, setIsChecked] = React.useState(false);
 
     return (
