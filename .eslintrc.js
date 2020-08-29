@@ -39,9 +39,22 @@ module.exports = {
                 'react/prop-types': 0,
                 'react/react-in-jsx-scope': 0,
                 '@typescript-eslint/no-explicit-any': 0,
+                // interface等のメンバーを定義する際、複数行にまたがる場合はデミリタ無しとする (prettierとの競合解消)
+                // https://kic-yuuki.hatenablog.com/entry/2019/10/19/141601#prettiersemi%E3%81%A8-typescript-eslintmember-delimiter-style%E3%81%8C%E7%AB%B6%E5%90%88%E3%81%97%E3%81%9F
+                '@typescript-eslint/member-delimiter-style': [
+                    'error',
+                    {
+                        multiline: {
+                            delimiter: 'none',
+                            requireLast: false,
+                        },
+                        singleline: {
+                            delimiter: 'comma',
+                            requireLast: false,
+                        },
+                    },
+                ],
                 eqeqeq: 2,
-                'no-var': 2,
-                'prefer-const': 2,
             },
         },
     ],
