@@ -7,7 +7,7 @@
         "build": "next build",
         "start": "next start",
         "export": "next export",
-        "format": "prettier --write --ignore-path .gitignore .",
+        "format": "prettier --write --ignore-path .gitignore \"**/*.{js,ts,tsx,md,json,css}\"",
         "lint": "eslint --fix --ignore-path .gitignore .",
         "typeCheck": "tsc -w",
         "test": "jest"
