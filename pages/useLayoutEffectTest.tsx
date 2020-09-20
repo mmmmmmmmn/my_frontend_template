@@ -1,35 +1,35 @@
-import React from 'react';
-import { NextPage } from 'next';
+import React from 'react'
+import { NextPage } from 'next'
 
 const UseLayoutEffectTest: NextPage = () => {
-    const [isShowChild, setIsShowChild] = React.useState(false);
+    const [isShowChild, setIsShowChild] = React.useState(false)
 
-    React.useEffect(() => setIsShowChild(true), []);
+    React.useEffect(() => setIsShowChild(true), [])
 
-    return isShowChild ? <Child /> : null;
-};
+    return isShowChild ? <Child /> : null
+}
 
 const Child: React.FunctionComponent = () => {
-    const [count, increment] = useIncrement();
+    const [count, increment] = useIncrement()
 
-    console.log('render', count);
+    console.log('render', count)
 
-    React.useLayoutEffect(() => console.log('layout effect', count), [count]);
-    React.useEffect(() => console.log('effect', count), [count]);
+    React.useLayoutEffect(() => console.log('layout effect', count), [count])
+    React.useEffect(() => console.log('effect', count), [count])
 
     return (
         <>
             <button onClick={increment}>increment</button>
             count: {count}
         </>
-    );
-};
+    )
+}
 
 const useIncrement = (): [number, VoidFunction] => {
-    const [count, setCount] = React.useState(0);
-    const increment = () => setCount(count => count + 1);
+    const [count, setCount] = React.useState(0)
+    const increment = () => setCount(count => count + 1)
 
-    return [count, increment];
-};
+    return [count, increment]
+}
 
-export default UseLayoutEffectTest;
+export default UseLayoutEffectTest

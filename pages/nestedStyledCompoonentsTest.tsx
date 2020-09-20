@@ -1,19 +1,19 @@
-import React from 'react';
-import { NextPage } from 'next';
+import React from 'react'
+import { NextPage } from 'next'
 
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const NestedStyledCompoonentsTest: NextPage = () => (
     <Parent>
         <Child>child</Child>
     </Parent>
-);
+)
 
-export default NestedStyledCompoonentsTest;
+export default NestedStyledCompoonentsTest
 
 const Child = styled.div`
     background: blue;
-`;
+`
 
 const Parent = styled.div`
     background: red;
@@ -22,4 +22,4 @@ const Parent = styled.div`
     ${Child} {
         color: #fff;
     }
-`;
+`

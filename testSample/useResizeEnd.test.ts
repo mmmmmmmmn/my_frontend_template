@@ -1,90 +1,90 @@
-import React from 'react';
-import { renderHook } from '@testing-library/react-hooks';
+import React from 'react'
+import { renderHook } from '@testing-library/react-hooks'
 
 const useResizeEnd = (onResizeEnd: VoidFunction) => {
-    const timerId = React.useRef<number>();
+    const timerId = React.useRef<number>()
 
     const clear = () => {
-        if (timerId.current !== undefined) clearTimeout(timerId.current);
-    };
+        if (timerId.current !== undefined) clearTimeout(timerId.current)
+    }
 
     const onResize = () => {
-        clear();
-        timerId.current = setTimeout(onResizeEnd, 100);
-    };
+        clear()
+        timerId.current = setTimeout(onResizeEnd, 100)
+    }
 
     React.useEffect(() => {
-        window.addEventListener('resize', onResize);
+        window.addEventListener('resize', onResize)
 
         return () => {
-            clear();
-            window.removeEventListener('resize', onResize);
-        };
-    }, []);
-};
+            clear()
+            window.removeEventListener('resize', onResize)
+        }
+    }, [])
+}
 
 const mount = () => {
-    const callBack = jest.fn();
-    const { unmount } = renderHook(() => useResizeEnd(callBack));
+    const callBack = jest.fn()
+    const { unmount } = renderHook(() => useResizeEnd(callBack))
 
-    return { callBack, unmount };
-};
+    return { callBack, unmount }
+}
 
-const resize = () => window.dispatchEvent(new Event('resize'));
+const resize = () => window.dispatchEvent(new Event('resize'))
 
-jest.useFakeTimers();
+jest.useFakeTimers()
 
 describe('useResizeEnd', () => {
     it('should execute callback when window resize', () => {
-        const { callBack } = mount();
+        const { callBack } = mount()
 
-        resize();
+        resize()
 
-        expect(callBack).not.toHaveBeenCalled();
+        expect(callBack).not.toHaveBeenCalled()
 
-        jest.runAllTimers();
+        jest.runAllTimers()
 
-        expect(callBack).toHaveBeenCalled();
-    });
+        expect(callBack).toHaveBeenCalled()
+    })
     it('should detect only window resize completion  ', () => {
-        const { callBack } = mount();
+        const { callBack } = mount()
 
-        resize();
-        resize();
-        resize();
-        resize();
+        resize()
+        resize()
+        resize()
+        resize()
 
-        jest.runAllTimers();
+        jest.runAllTimers()
 
-        expect(callBack).toHaveBeenCalledTimes(1);
+        expect(callBack).toHaveBeenCalledTimes(1)
 
-        resize();
-        resize();
-        resize();
+        resize()
+        resize()
+        resize()
 
-        jest.runAllTimers();
+        jest.runAllTimers()
 
-        expect(callBack).toHaveBeenCalledTimes(2);
-    });
+        expect(callBack).toHaveBeenCalledTimes(2)
+    })
     it('should not detect window resize after unmount', () => {
-        const { callBack, unmount } = mount();
+        const { callBack, unmount } = mount()
 
-        unmount();
+        unmount()
 
-        resize();
+        resize()
 
-        jest.runAllTimers();
+        jest.runAllTimers()
 
-        expect(callBack).not.toHaveBeenCalled();
-    });
+        expect(callBack).not.toHaveBeenCalled()
+    })
     it('should cancel callback booking if the component is unmount immediately after window resize', () => {
-        const { callBack, unmount } = mount();
+        const { callBack, unmount } = mount()
 
-        resize();
-        unmount();
+        resize()
+        unmount()
 
-        jest.runAllTimers();
+        jest.runAllTimers()
 
-        expect(callBack).not.toHaveBeenCalled();
-    });
-});
+        expect(callBack).not.toHaveBeenCalled()
+    })
+})

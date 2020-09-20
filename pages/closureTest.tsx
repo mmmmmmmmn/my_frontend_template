@@ -1,34 +1,34 @@
-import React from 'react';
-import { NextPage } from 'next';
+import React from 'react'
+import { NextPage } from 'next'
 
 const useTimer = () => {
-    const timerId = React.useRef<number>();
+    const timerId = React.useRef<number>()
 
     const set = (callBack: VoidFunction) => {
-        clear();
+        clear()
 
-        timerId.current = setTimeout(callBack, 3000);
+        timerId.current = setTimeout(callBack, 3000)
 
-        console.log('set', timerId.current);
-    };
+        console.log('set', timerId.current)
+    }
 
     const clear = () => {
-        if (timerId.current === undefined) return;
+        if (timerId.current === undefined) return
 
-        console.log('clear', timerId.current);
+        console.log('clear', timerId.current)
 
-        clearTimeout(timerId.current);
-    };
+        clearTimeout(timerId.current)
+    }
 
-    React.useEffect(() => clear, []);
+    React.useEffect(() => clear, [])
 
-    return set;
-};
+    return set
+}
 
 const ClosureTest: NextPage = () => {
-    const set = useTimer();
+    const set = useTimer()
 
-    return <button onClick={() => set(() => console.log('fire'))}>set</button>;
-};
+    return <button onClick={() => set(() => console.log('fire'))}>set</button>
+}
 
-export default ClosureTest;
+export default ClosureTest

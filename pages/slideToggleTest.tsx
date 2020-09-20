@@ -1,10 +1,10 @@
-import React from 'react';
-import { NextPage } from 'next';
-import CSSTransition from 'react-transition-group/CSSTransition';
-import styled from 'styled-components';
+import React from 'react'
+import { NextPage } from 'next'
+import CSSTransition from 'react-transition-group/CSSTransition'
+import styled from 'styled-components'
 
-const duration = 0.5 as const;
-const classNames = 'slideToggleClassNames' as const;
+const duration = 0.5 as const
+const classNames = 'slideToggleClassNames' as const
 
 const SlideToggleTest: NextPage = () => (
     <>
@@ -24,10 +24,10 @@ const SlideToggleTest: NextPage = () => (
             </div>
         </ListItem>
     </>
-);
+)
 
 const ListItem: NextPage<{ title: string }> = ({ children, title }) => {
-    const [isOpen, setIsOpen] = React.useState(false);
+    const [isOpen, setIsOpen] = React.useState(false)
 
     return (
         <ListItemContainer>
@@ -36,17 +36,17 @@ const ListItem: NextPage<{ title: string }> = ({ children, title }) => {
                 <ListItemContent>{children}</ListItemContent>
             </SlideToggle>
         </ListItemContainer>
-    );
-};
+    )
+}
 
 const SlideToggle: NextPage<{ isOpen: boolean }> = ({ children, isOpen }) => {
-    const childRef = React.useRef<HTMLDivElement>(null);
+    const childRef = React.useRef<HTMLDivElement>(null)
 
     const calcChildHeight = () => {
-        if (childRef.current === null) return 0;
+        if (childRef.current === null) return 0
 
-        return childRef.current.clientHeight;
-    };
+        return childRef.current.clientHeight
+    }
 
     return (
         <CSSTransition
@@ -60,29 +60,29 @@ const SlideToggle: NextPage<{ isOpen: boolean }> = ({ children, isOpen }) => {
                 <div ref={childRef}>{children}</div>
             </SlideToggleContainer>
         </CSSTransition>
-    );
-};
+    )
+}
 
-export default SlideToggleTest;
+export default SlideToggleTest
 
 const ListItemContainer = styled.div`
     & + & {
         margin-top: 1px;
     }
-`;
+`
 
 const Title = styled.div`
     background: blue;
     color: #fff;
     cursor: pointer;
-`;
+`
 
 const ListItemContent = styled.div`
     background: skyblue;
     color: #fff;
     padding: 10px;
     word-break: break-all;
-`;
+`
 
 const SlideToggleContainer = styled.div<{ calcChildHeight: () => number }>`
     transition: ${duration}s;
@@ -110,4 +110,4 @@ const SlideToggleContainer = styled.div<{ calcChildHeight: () => number }>`
     &.${classNames}-exit-done {
         height: 0;
     }
-`;
+`

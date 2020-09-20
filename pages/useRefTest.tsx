@@ -1,25 +1,25 @@
-import React from 'react';
-import { NextPage } from 'next';
+import React from 'react'
+import { NextPage } from 'next'
 
 const UseRefTest: NextPage = () => {
-    const countRef = React.useRef(0);
-    const [count, setCount] = React.useState(0);
+    const countRef = React.useRef(0)
+    const [count, setCount] = React.useState(0)
 
-    React.useEffect(() => console.log(countRef.current));
+    React.useEffect(() => console.log(countRef.current))
     React.useEffect(() => {
-        countRef.current = count;
-    });
-    React.useEffect(() => console.log(countRef.current));
+        countRef.current = count
+    })
+    React.useEffect(() => console.log(countRef.current))
 
-    console.log(countRef.current);
-    console.log('render');
+    console.log(countRef.current)
+    console.log('render')
 
     return (
         <>
             <button onClick={() => setCount(count => count + 1)}>increment state</button>
             <button
                 onClick={() => {
-                    countRef.current = countRef.current + 1;
+                    countRef.current = countRef.current + 1
                 }}
                 onMouseLeave={() => console.log(countRef.current)}
             >
@@ -32,7 +32,7 @@ const UseRefTest: NextPage = () => {
                 ref: {countRef.current}
             </div>
         </>
-    );
-};
+    )
+}
 
-export default UseRefTest;
+export default UseRefTest

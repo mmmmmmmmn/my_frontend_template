@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 function Counter() {
-    const [count, setCount] = React.useState(0);
-    const prevCount = usePrevious(count);
-    console.log(prevCount);
+    const [count, setCount] = React.useState(0)
+    const prevCount = usePrevious(count)
+    console.log(prevCount)
     return (
         <>
             <h1>
@@ -11,18 +11,18 @@ function Counter() {
             </h1>
             <button onClick={() => setCount(count => count + 1)}>increment</button>
         </>
-    );
+    )
 }
 
 function usePrevious(value: number) {
-    const ref = React.useRef(0);
+    const ref = React.useRef(0)
 
     // render直後に実行
     React.useEffect(() => {
-        console.log('set', value);
-        ref.current = value;
-    });
-    return ref.current;
+        console.log('set', value)
+        ref.current = value
+    })
+    return ref.current
 }
 
-export default Counter;
+export default Counter

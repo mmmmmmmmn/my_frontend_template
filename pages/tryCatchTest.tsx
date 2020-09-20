@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { NextPage } from 'next'
 
 // const wait = (i: number) =>
 //     new Promise((resolve, reject) =>
@@ -26,17 +26,17 @@ import { NextPage } from 'next';
 const increment = (i: number) => {
     try {
         setTimeout(() => {
-            console.log('fire', i);
-            if (i === 3) throw i;
-            increment(i + 1);
-        }, 1000);
+            console.log('fire', i)
+            if (i === 3) throw i
+            increment(i + 1)
+        }, 1000)
     } catch (e) {
-        console.log('drftgyhuijk', e, i);
+        console.log('drftgyhuijk', e, i)
     }
-};
+}
 
-increment(0);
+increment(0)
 
-const TryCatchTest: NextPage = () => <></>;
+const TryCatchTest: NextPage = () => <></>
 
-export default TryCatchTest;
+export default TryCatchTest

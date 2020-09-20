@@ -1,11 +1,11 @@
-import React from 'react';
-import { NextPage } from 'next';
+import React from 'react'
+import { NextPage } from 'next'
 
 const UseCallbackTest: NextPage = () => {
-    const [count, setCount] = React.useState(0);
+    const [count, setCount] = React.useState(0)
 
-    const rawCallback = () => console.log('raw callback');
-    const memorizedCallBack = React.useCallback(() => console.log('memorized callback'), []);
+    const rawCallback = () => console.log('raw callback')
+    const memorizedCallBack = React.useCallback(() => console.log('memorized callback'), [])
 
     return (
         <>
@@ -14,14 +14,14 @@ const UseCallbackTest: NextPage = () => {
             <NoMemo callBack={rawCallback} />
             <Memo callBack={memorizedCallBack} />
         </>
-    );
-};
+    )
+}
 
 const NoMemo: React.FunctionComponent<{ callBack: VoidFunction }> = ({ callBack }) => {
-    callBack();
+    callBack()
 
-    return <div>child</div>;
-};
-const Memo: typeof NoMemo = React.memo(NoMemo);
+    return <div>child</div>
+}
+const Memo: typeof NoMemo = React.memo(NoMemo)
 
-export default UseCallbackTest;
+export default UseCallbackTest

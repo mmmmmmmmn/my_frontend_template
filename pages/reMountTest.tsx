@@ -1,8 +1,8 @@
-import React from 'react';
-import { NextPage } from 'next';
+import React from 'react'
+import { NextPage } from 'next'
 
 const ReMountTest: NextPage = () => {
-    const [count, setCount] = React.useState(0);
+    const [count, setCount] = React.useState(0)
 
     return (
         <>
@@ -11,14 +11,14 @@ const ReMountTest: NextPage = () => {
             {<Child key={1} />}
             {/* {<Child key={`${count}_1`} />} */}
         </>
-    );
-};
+    )
+}
 
 const Child: React.FunctionComponent = () => {
-    React.useEffect(() => console.log('mounted'), []);
-    React.useEffect(() => console.log('rendered'));
+    React.useEffect(() => console.log('mounted'), [])
+    React.useEffect(() => console.log('rendered'))
 
-    return null;
-};
+    return null
+}
 
-export default ReMountTest;
+export default ReMountTest

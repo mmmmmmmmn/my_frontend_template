@@ -1,16 +1,16 @@
-import React from 'react';
-import { NextPage } from 'next';
+import React from 'react'
+import { NextPage } from 'next'
 
 const ComponentDidMountOrderTest: NextPage = () => {
-    React.useEffect(() => console.log('parent'), []);
+    React.useEffect(() => console.log('parent'), [])
 
-    return <Child />;
-};
+    return <Child />
+}
 
 const Child: NextPage = () => {
-    React.useEffect(() => console.log('child'), []);
+    React.useEffect(() => console.log('child'), [])
 
-    return <div>child</div>;
-};
+    return <div>child</div>
+}
 
-export default ComponentDidMountOrderTest;
+export default ComponentDidMountOrderTest

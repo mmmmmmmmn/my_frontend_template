@@ -1,10 +1,10 @@
-import React from 'react';
-import { NextPage } from 'next';
+import React from 'react'
+import { NextPage } from 'next'
 
-import { FormControlLabel, Checkbox } from '@material-ui/core';
+import { FormControlLabel, Checkbox } from '@material-ui/core'
 
 const LabelTest: NextPage = () => {
-    const [isChecked, setIsChecked] = React.useState(false);
+    const [isChecked, setIsChecked] = React.useState(false)
 
     return (
         <FormControlLabel
@@ -12,8 +12,8 @@ const LabelTest: NextPage = () => {
                 <Checkbox
                     checked={isChecked}
                     onChange={() => {
-                        console.log('checkbox changed');
-                        setIsChecked(isChecked => !isChecked);
+                        console.log('checkbox changed')
+                        setIsChecked(isChecked => !isChecked)
                     }}
                     onClick={() => console.log('checkbox clicked')}
                 />
@@ -22,7 +22,7 @@ const LabelTest: NextPage = () => {
             onChange={() => console.log('label changed')}
             onClick={() => console.log('label clicked')}
         />
-    );
-};
+    )
+}
 
-export default LabelTest;
+export default LabelTest
