@@ -19,6 +19,9 @@ module.exports = {
         {
             files: ['*.js'],
             extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+            rules: {
+                eqeqeq: 2,
+            },
         },
         {
             files: ['*.ts', '*.tsx'],
@@ -55,6 +58,7 @@ module.exports = {
                     },
                 ],
                 eqeqeq: 2,
+                'no-unreachable': 2,
                 'react-hooks/rules-of-hooks': 2,
             },
         },
