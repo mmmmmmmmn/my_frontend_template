@@ -13,7 +13,7 @@ const LabelTest: NextPage = () => {
                     checked={isChecked}
                     onChange={() => {
                         console.log('checkbox changed')
-                        setIsChecked(isChecked => !isChecked)
+                        setIsChecked((isChecked) => !isChecked)
                     }}
                     onClick={() => console.log('checkbox clicked')}
                 />

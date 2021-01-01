@@ -31,7 +31,7 @@ const TransitionEndTest: React.FunctionComponent = () => {
 
     return (
         <>
-            <button onClick={() => setIsShow(isShow => !isShow)}>toggle(transitionend)</button>
+            <button onClick={() => setIsShow((isShow) => !isShow)}>toggle(transitionend)</button>
             <TransitionTarget ref={targetRef} isShow={isShow} />
         </>
     )
@@ -70,8 +70,8 @@ const ResizeObserverPolyfillTest: React.FunctionComponent = () => {
     React.useEffect(() => {
         if (targetRef.current === null) return
 
-        const observer = new ResizeObserver(entries =>
-            entries.forEach(entry => console.log('resize polyfill', entry.target.getBoundingClientRect().width)),
+        const observer = new ResizeObserver((entries) =>
+            entries.forEach((entry) => console.log('resize polyfill', entry.target.getBoundingClientRect().width)),
         )
 
         observer.observe(targetRef.current)
@@ -93,8 +93,8 @@ const IntersectionObserverPolyfillTest: React.FunctionComponent = () => {
     React.useEffect(() => {
         if (targetRef.current === null) return
 
-        const observer = new IntersectionObserver(entries =>
-            entries.forEach(entry =>
+        const observer = new IntersectionObserver((entries) =>
+            entries.forEach((entry) =>
                 console.log('intersect with polyfill', entry.target.getBoundingClientRect().width),
             ),
         )
@@ -121,7 +121,7 @@ const TransitionTarget = styled.div<{ isShow: boolean }>`
     height: 100px;
     background: red;
     transition: ${transition}s;
-    opacity: ${p => (p.isShow ? 1 : 0)};
+    opacity: ${(p) => (p.isShow ? 1 : 0)};
 `
 
 const rotate = keyframes`

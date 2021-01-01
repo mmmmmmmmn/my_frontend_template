@@ -9,7 +9,7 @@ const UseCallbackTest: NextPage = () => {
 
     return (
         <>
-            <button onClick={() => setCount(count => count + 1)}>increment</button>
+            <button onClick={() => setCount((count) => count + 1)}>increment</button>
             {count}
             <NoMemo callBack={rawCallback} />
             <Memo callBack={memorizedCallBack} />

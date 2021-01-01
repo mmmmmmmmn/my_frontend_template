@@ -16,7 +16,7 @@ const PromiseTest: NextPage = () => {
 
     return (
         <>
-            <button onClick={() => setCount(count => count + 1)}>increment</button>
+            <button onClick={() => setCount((count) => count + 1)}>increment</button>
             <button onClick={() => setTimeout(log, 3000)}>setTimeout</button>
             <div>
                 current: {count}

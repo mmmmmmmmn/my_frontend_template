@@ -9,7 +9,7 @@ const TransitionEndTest: NextPage = () => {
 
     return (
         <>
-            <button onClick={() => setIsTop(isTop => !isTop)}>toggle state</button>
+            <button onClick={() => setIsTop((isTop) => !isTop)}>toggle state</button>
             <Target isTop={isTop} isLeft={isBetween} ref={targetRef} />
         </>
     )
@@ -53,6 +53,6 @@ const Target = styled.div<{ isTop: boolean; isLeft: boolean }>`
 
     transition: margin-top 0.5s;
 
-    margin-top: ${p => (p.isTop ? 100 + 10 : 10)}px;
-    margin-left: ${p => (p.isLeft ? 100 : 0)}px;
+    margin-top: ${(p) => (p.isTop ? 100 + 10 : 10)}px;
+    margin-left: ${(p) => (p.isLeft ? 100 : 0)}px;
 `

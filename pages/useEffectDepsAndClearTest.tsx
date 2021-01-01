@@ -15,9 +15,9 @@ const UseEffectDepsAndClearTest: NextPage = () => {
 
     return (
         <>
-            <button onClick={() => setState1(state1 => state1 + 1)}>toggle1</button>
+            <button onClick={() => setState1((state1) => state1 + 1)}>toggle1</button>
             {state1}
-            <button onClick={() => setState2(state2 => state2 + 1)}>toggle2</button>
+            <button onClick={() => setState2((state2) => state2 + 1)}>toggle2</button>
             {state2}
         </>
     )

@@ -15,7 +15,7 @@ const SwitchRefTest: NextPage = () => {
 
     return (
         <>
-            <button onClick={() => setState(state => !state)}>toggle</button>
+            <button onClick={() => setState((state) => !state)}>toggle</button>
             {state ? <Target1 ref={targetRef} /> : <Target2 ref={targetRef} />}
         </>
     )

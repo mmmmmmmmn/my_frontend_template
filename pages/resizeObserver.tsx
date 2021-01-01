@@ -11,11 +11,11 @@ const ResizeObserverTest: NextPage = () => {
 
         let timerId: number | null = null
 
-        const observer = new ResizeObserver(entries => {
+        const observer = new ResizeObserver((entries) => {
             if (timerId !== null) clearTimeout(timerId)
 
             timerId = setTimeout(() => {
-                entries.forEach(entry => {
+                entries.forEach((entry) => {
                     console.log(entry.target.getBoundingClientRect())
                 })
             }, 100)

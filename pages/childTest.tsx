@@ -8,7 +8,7 @@ const ChildTest: NextPage = () => {
 
     return (
         <>
-            <button onClick={() => set(count => count + 1)}>toggle</button>
+            <button onClick={() => set((count) => count + 1)}>toggle</button>
             {count}
             <Child1 count={count} />
             <Child2 />

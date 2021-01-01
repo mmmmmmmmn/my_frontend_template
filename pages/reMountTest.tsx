@@ -6,7 +6,7 @@ const ReMountTest: NextPage = () => {
 
     return (
         <>
-            <button onClick={() => setCount(count => count + 1)}>increment</button>
+            <button onClick={() => setCount((count) => count + 1)}>increment</button>
             {count}
             {<Child key={1} />}
             {/* {<Child key={`${count}_1`} />} */}

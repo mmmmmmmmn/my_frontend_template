@@ -16,7 +16,7 @@ const UseRefTest: NextPage = () => {
 
     return (
         <>
-            <button onClick={() => setCount(count => count + 1)}>increment state</button>
+            <button onClick={() => setCount((count) => count + 1)}>increment state</button>
             <button
                 onClick={() => {
                     countRef.current = countRef.current + 1

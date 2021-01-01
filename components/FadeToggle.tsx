@@ -3,7 +3,7 @@ import { useTransition, animated } from 'react-spring'
 
 import { transition } from '../config/styles'
 
-const FadeToggle: React.FunctionComponent<{ isShow: boolean }> = p => {
+const FadeToggle: React.FunctionComponent<{ isShow: boolean }> = (p) => {
     const transitions = useTransition(p.isShow, null, {
         config: { duration: transition * 1000 },
         from: { opacity: 0 },

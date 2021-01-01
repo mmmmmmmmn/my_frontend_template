@@ -31,7 +31,7 @@ const ListItem: NextPage<{ title: string }> = ({ children, title }) => {
 
     return (
         <ListItemContainer>
-            <Title onClick={() => setIsOpen(isOpen => !isOpen)}>{title}</Title>
+            <Title onClick={() => setIsOpen((isOpen) => !isOpen)}>{title}</Title>
             <SlideToggle isOpen={isOpen}>
                 <ListItemContent>{children}</ListItemContent>
             </SlideToggle>
@@ -95,14 +95,14 @@ const SlideToggleContainer = styled.div<{ calcChildHeight: () => number }>`
         height: 0;
     }
     &.${classNames}-enter-active {
-        height: ${p => p.calcChildHeight()}px;
+        height: ${(p) => p.calcChildHeight()}px;
     }
     &.${classNames}-enter-done {
         height: auto;
         overflow: visible;
     }
     &.${classNames}-exit {
-        height: ${p => p.calcChildHeight()}px;
+        height: ${(p) => p.calcChildHeight()}px;
     }
     &.${classNames}-exit-active {
         height: 0;
