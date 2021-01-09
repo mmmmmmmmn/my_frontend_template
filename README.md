@@ -1,1 +1,1 @@
-# my_frontend_template
+# myFrontendTemplate
