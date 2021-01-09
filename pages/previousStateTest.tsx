@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Counter() {
+const Counter: React.FC = () => {
     const [count, setCount] = React.useState(0)
     const prevCount = usePrevious(count)
     console.log(prevCount)
@@ -14,7 +14,7 @@ function Counter() {
     )
 }
 
-function usePrevious(value: number) {
+const usePrevious = (value: number) => {
     const ref = React.useRef(0)
 
     // render直後に実行

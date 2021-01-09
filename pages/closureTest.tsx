@@ -2,7 +2,7 @@ import React from 'react'
 import { NextPage } from 'next'
 
 const useTimer = () => {
-    const timerId = React.useRef<number>()
+    const timerId = React.useRef<NodeJS.Timeout>()
 
     const set = (callBack: VoidFunction) => {
         clear()

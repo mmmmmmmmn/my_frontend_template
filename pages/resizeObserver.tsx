@@ -9,7 +9,7 @@ const ResizeObserverTest: NextPage = () => {
         const target2 = document.getElementById('target2')
         if (target === null || target2 === null) return
 
-        let timerId: number | null = null
+        let timerId: NodeJS.Timeout | null = null
 
         const observer = new ResizeObserver((entries) => {
             if (timerId !== null) clearTimeout(timerId)

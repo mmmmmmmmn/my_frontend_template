@@ -28,7 +28,7 @@ const calcRoughCount = (state: State) => Math.floor(state / 10)
 
 const ConnectedRough = connect((state: State) => ({
     roughCount: calcRoughCount(state),
-}))(({ roughCount }) => {
+}))(({ roughCount }: { roughCount: number }) => {
     console.log('render ConnectedRough')
 
     return <>{roughCount}</>
@@ -43,7 +43,7 @@ const RoughByHook: React.FC = () => {
 
 const ConnectedIncrementor = connect(null, (dispatch: Dispatch) => ({
     increment: () => dispatch(actionCreators.increment()),
-}))(({ increment }) => {
+}))(({ increment }: { increment: VoidFunction }) => {
     console.log('render ConnectedIncrementor')
 
     return <button onClick={increment}>increment by connect</button>

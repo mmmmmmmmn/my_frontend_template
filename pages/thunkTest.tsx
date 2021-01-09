@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react'
+import { NextPage } from 'next'
 import { connect, Provider } from 'react-redux'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk'
@@ -38,7 +39,7 @@ const store = createStore(combineReducers({ counter: counterReducer }), composeW
 
 type StoreProps = ReturnType<typeof mapStateToProps>
 type DispatchProps = ReturnType<typeof mapDispatchToProps>
-type OwnProps = {}
+type OwnProps = Record<string, unknown>
 
 // component
 const Index: React.FC<StoreProps & DispatchProps & OwnProps> = (props) => {
@@ -63,7 +64,7 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<State, undefined, ActionType
 // redux connect
 const ConnectedIndex = connect(mapStateToProps, mapDispatchToProps)(Index)
 
-const Page = () => (
+const Page: NextPage = () => (
     <Provider store={store}>
         <ConnectedIndex />
     </Provider>
