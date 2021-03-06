@@ -1,0 +1,29 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:base", ":preserveSemverRanges"],
+    "timezone": "Asia/Tokyo",
+    "schedule": ["at any time"],
+    "baseBranches": ["master"],
+    "labels": ["renovate"],
+    "enabledManagers": ["npm"],
+    "postUpdateOptions": ["npmDedupe"],
+    "vulnerabilityAlerts": {
+        "schedule": ["at any time"],
+        "dependencyDashboardApproval": false,
+        "rangeStrategy": "update-lockfile",
+        "commitMessageSuffix": "[SECURITY]",
+        "branchTopic": "{{{datasource}}}-{{{depName}}}-vulnerability",
+        "prCreation": "immediate"
+    },
+    "lockFileMaintenance": {
+        "enabled": true,
+        "schedule": ["at any time"],
+        "recreateClosed": true,
+        "rebaseStalePrs": true,
+        "branchTopic": "lock-file-maintenance",
+        "commitMessageAction": "Lock file maintenance",
+        "prBodyDefinitions": {
+            "Change": "All locks refreshed"
+        }
+    }
+}
