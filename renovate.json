@@ -7,6 +7,12 @@
     "labels": ["renovate"],
     "enabledManagers": ["npm"],
     "postUpdateOptions": ["npmDedupe"],
+    "major": {
+        "prHeader": "This PR is major update. Be careful when you merge this PR.",
+        "prBodyDefinitions": {
+            "Caution": "This PR is major update."
+        }
+    },
     "vulnerabilityAlerts": {
         "schedule": ["at any time"],
         "dependencyDashboardApproval": false,
