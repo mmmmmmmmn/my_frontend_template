@@ -7,14 +7,19 @@
     "labels": ["renovate"],
     "enabledManagers": ["npm"],
     "postUpdateOptions": ["npmDedupe"],
+    "separateMinorPatch": true,
     "major": {
-        "prHeader": "This PR is major update. Be careful when you merge this PR.",
+        "prHeader": "**This PR is major update. Be careful when you merge this PR.**",
         "prBodyDefinitions": {
             "Caution": "This PR is major update."
         }
     },
+    "minor": {
+        "prHeader": "**This PR is minor update.**"
+    },
     "patch": {
-        "automerge": true
+        "automerge": true,
+        "prHeader": "**This PR is patch update.**"
     },
     "vulnerabilityAlerts": {
         "schedule": ["at any time"],
