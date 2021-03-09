@@ -13,9 +13,12 @@
             "Caution": "This PR is major update."
         }
     },
-    "patch": {
-        "automerge": true
-    },
+    "packageRules": [
+        {
+            "updateTypes": ["patch"],
+            "automerge": true
+        }
+    ],
     "vulnerabilityAlerts": {
         "schedule": ["at any time"],
         "dependencyDashboardApproval": false,
