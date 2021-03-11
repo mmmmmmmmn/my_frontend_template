@@ -3,7 +3,7 @@
     "extends": ["config:base", ":preserveSemverRanges"],
     "timezone": "Asia/Tokyo",
     "schedule": ["at any time"],
-    "baseBranches": ["develop"],
+    "baseBranches": ["master"],
     "labels": ["renovate"],
     "enabledManagers": ["npm"],
     "postUpdateOptions": ["npmDedupe"],
