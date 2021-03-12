@@ -70,7 +70,7 @@ const ResizeObserverPolyfillTest: React.FunctionComponent = () => {
     React.useEffect(() => {
         if (targetRef.current === null) return
 
-        const observer = new ResizeObserver((entries) =>
+        const observer = new ResizeObserver((entries: ResizeObserverEntry[]) =>
             entries.forEach((entry) => console.log('resize polyfill', entry.target.getBoundingClientRect().width)),
         )
 

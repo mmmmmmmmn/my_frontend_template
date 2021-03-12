@@ -11,7 +11,7 @@ const ResizeObserverTest: NextPage = () => {
 
         let timerId: NodeJS.Timeout | null = null
 
-        const observer = new ResizeObserver((entries) => {
+        const observer = new ResizeObserver((entries: ResizeObserverEntry[]) => {
             if (timerId !== null) clearTimeout(timerId)
 
             timerId = setTimeout(() => {
