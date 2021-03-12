@@ -8,6 +8,7 @@
     "enabledManagers": ["npm"],
     "postUpdateOptions": ["npmDedupe"],
     "separateMinorPatch": true,
+    "requiredStatusChecks": null,
     "major": {
         "prHeader": "**This PR is major update. Be careful when you merge this PR.**",
         "prBodyDefinitions": {
