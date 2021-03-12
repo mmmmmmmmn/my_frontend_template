@@ -31,6 +31,7 @@
     },
     "lockFileMaintenance": {
         "enabled": true,
+        "automerge": true,
         "schedule": ["at any time"],
         "recreateClosed": true,
         "rebaseStalePrs": true,
