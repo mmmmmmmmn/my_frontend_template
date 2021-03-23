@@ -2,12 +2,12 @@ import React from 'react'
 import { NextPage } from 'next'
 
 const useTimer = () => {
-    const timerId = React.useRef<NodeJS.Timeout>()
+    const timerId = React.useRef<number>()
 
     const set = (callBack: VoidFunction) => {
         clear()
 
-        timerId.current = setTimeout(callBack, 3000)
+        timerId.current = window.setTimeout(callBack, 3000)
 
         console.log('set', timerId.current)
     }

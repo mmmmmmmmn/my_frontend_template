@@ -9,12 +9,12 @@ const ResizeObserverTest: NextPage = () => {
         const target2 = document.getElementById('target2')
         if (target === null || target2 === null) return
 
-        let timerId: NodeJS.Timeout | null = null
+        let timerId: number | null = null
 
         const observer = new ResizeObserver((entries: ResizeObserverEntry[]) => {
             if (timerId !== null) clearTimeout(timerId)
 
-            timerId = setTimeout(() => {
+            timerId = window.setTimeout(() => {
                 entries.forEach((entry) => {
                     console.log(entry.target.getBoundingClientRect())
                 })

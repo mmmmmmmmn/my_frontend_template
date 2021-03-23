@@ -2,7 +2,7 @@ import React from 'react'
 import { renderHook } from '@testing-library/react-hooks'
 
 const useResizeEnd = (onResizeEnd: VoidFunction) => {
-    const timerId = React.useRef<NodeJS.Timeout>()
+    const timerId = React.useRef<number>()
 
     const clear = () => {
         if (timerId.current !== undefined) clearTimeout(timerId.current)
@@ -10,7 +10,7 @@ const useResizeEnd = (onResizeEnd: VoidFunction) => {
 
     const onResize = () => {
         clear()
-        timerId.current = setTimeout(onResizeEnd, 100)
+        timerId.current = window.setTimeout(onResizeEnd, 100)
     }
 
     React.useEffect(() => {
