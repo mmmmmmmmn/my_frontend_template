@@ -17,14 +17,13 @@ const actionCreators = {
 
 type ActionTypes = ReturnType<typeof actionCreators[keyof typeof actionCreators]>
 
-const thunkAdd: (num: number) => ThunkAction<void, State, undefined, ActionTypes> = (num = 1) => (
-    dispatch,
-    getState,
-) => {
-    console.log('debug', dispatch)
-    console.log('debug', getState)
-    console.log('debug', num)
-}
+const thunkAdd: (num: number) => ThunkAction<void, State, undefined, ActionTypes> =
+    (num = 1) =>
+    (dispatch, getState) => {
+        console.log('debug', dispatch)
+        console.log('debug', getState)
+        console.log('debug', num)
+    }
 
 // reducer
 const counterReducer = (state: CounterState = 0, action: ActionTypes): CounterState => {
