@@ -1,5 +1,5 @@
 import React from 'react'
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 
 const UseCallbackTest: NextPage = () => {
     const [count, setCount] = React.useState(0)

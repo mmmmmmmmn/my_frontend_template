@@ -1,5 +1,5 @@
 import React from 'react'
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 
 const ChildTest: NextPage = () => {
     console.log('render parent')

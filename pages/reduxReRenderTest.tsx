@@ -1,5 +1,5 @@
 import React from 'react'
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 import { connect, Provider, useDispatch, useSelector } from 'react-redux'
 import { createStore, Dispatch as RawDispatch } from 'redux'
 

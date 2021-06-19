@@ -1,5 +1,5 @@
 import React from 'react'
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 
 const ComponentDidMountOrderTest: NextPage = () => {
     React.useEffect(() => console.log('parent'), [])

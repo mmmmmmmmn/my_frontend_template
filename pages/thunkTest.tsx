@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 import { connect, Provider } from 'react-redux'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk'

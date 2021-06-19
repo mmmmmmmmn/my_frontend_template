@@ -1,5 +1,5 @@
 import React from 'react'
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 
 const UseEffectDepsAndClearTest: NextPage = () => {
     const [state1, setState1] = React.useState(0)

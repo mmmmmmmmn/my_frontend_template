@@ -1,5 +1,5 @@
 import React from 'react'
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 
 const ViewOnStateTest: NextPage = () => {
     const [content, setSomeState] = React.useState<React.ReactElement | null>(<div>initial</div>)

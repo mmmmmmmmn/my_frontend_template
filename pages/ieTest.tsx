@@ -1,5 +1,5 @@
 import React from 'react'
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 import 'intersection-observer'
 import ResizeObserver from 'resize-observer-polyfill'
 import styled, { keyframes } from 'styled-components'

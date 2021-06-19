@@ -5,6 +5,7 @@
         "jsx": "preserve",
         "lib": ["dom", "esnext"],
         "moduleResolution": "node",
+        "importsNotUsedAsValues": "error",
         "allowJs": true,
         "noEmit": true,
         "strict": true,
