@@ -34,7 +34,7 @@ const ConnectedRough = connect((state: State) => ({
     return <>{roughCount}</>
 })
 
-const RoughByHook: React.FC = () => {
+const RoughByHook: React.VFC = () => {
     const roughCount = useSelector<State, number>(calcRoughCount)
     console.log('render RoughByHook')
 
@@ -49,7 +49,7 @@ const ConnectedIncrementor = connect(null, (dispatch: Dispatch) => ({
     return <button onClick={increment}>increment by connect</button>
 })
 
-const IncrementorByHook: React.FC = () => {
+const IncrementorByHook: React.VFC = () => {
     const dispatch = useDispatch<Dispatch>()
     console.log('render IncrementorByHook')
 

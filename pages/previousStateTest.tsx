@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Counter: React.FC = () => {
+const Counter: React.VFC = () => {
     const [count, setCount] = React.useState(0)
     const prevCount = usePrevious(count)
     console.log(prevCount)

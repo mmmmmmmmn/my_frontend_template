@@ -41,7 +41,7 @@ type DispatchProps = ReturnType<typeof mapDispatchToProps>
 type OwnProps = Record<string, unknown>
 
 // component
-const Index: React.FC<StoreProps & DispatchProps & OwnProps> = (props) => {
+const Index: React.VFC<StoreProps & DispatchProps & OwnProps> = (props) => {
     const handleAdd = useCallback(() => props.add(12345), [props.add])
     return (
         <div>

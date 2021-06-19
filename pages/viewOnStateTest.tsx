@@ -18,7 +18,7 @@ const ViewOnStateTest: NextPage = () => {
     )
 }
 
-const Content1: React.FC = () => <h1>content1</h1>
-const Content2: React.FC = () => <h2>content2</h2>
+const Content1: React.VFC = () => <h1>content1</h1>
+const Content2: React.VFC = () => <h2>content2</h2>
 
 export default ViewOnStateTest
