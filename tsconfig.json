@@ -6,6 +6,7 @@
         "lib": ["dom", "esnext"],
         "moduleResolution": "node",
         "importsNotUsedAsValues": "error",
+        "noImplicitOverride": true,
         "allowJs": true,
         "noEmit": true,
         "strict": true,
